@@ -1,7 +1,30 @@
 @extends('plantilla')
 
 @section('content')
-
+@if (session('eliminart'))
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{session('eliminart')}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>   
+@endif
+@if (session('estadoont'))
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{session('estadoont')}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>   
+@endif
+@if (session('estadoofft'))
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{session('estadoofft')}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>   
+@endif
      <div class="row">
           <div class="col-md-7"> 
                 <div class="form-row">
@@ -61,30 +84,7 @@
                   </tr>
               @endforeach
               </table>
-              @if (session('eliminart'))
-              <div class="alert alert-success alert-dismissible fade show" role="alert">
-                  {{session('eliminart')}}
-                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-              </div>   
-              @endif
-              @if (session('estadoont'))
-              <div class="alert alert-success alert-dismissible fade show" role="alert">
-                  {{session('estadoont')}}
-                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-              </div>   
-              @endif
-              @if (session('estadoofft'))
-              <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                  {{session('estadoofft')}}
-                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-              </div>   
-              @endif
+ 
                 {{ $turnos->links()}}
                <style>
                    .w-5{
