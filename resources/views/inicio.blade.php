@@ -2,7 +2,38 @@
 
 @section('content')
 
-
+@if (session('eliminar'))
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{session('eliminar')}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>   
+@endif
+@if (session('estadoon'))
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{session('estadoon')}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>   
+@endif
+@if (session('estadooff'))
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{session('estadooff')}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>   
+@endif
+@if (session('asignarturno'))
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{session('asignarturno')}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>   
+@endif
      <div class="row">
           <div class="col-md"> 
                 <div class="form-row">
@@ -117,38 +148,7 @@
                 </form>
               @endforeach
               </table>
-                @if (session('eliminar'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    {{session('eliminar')}}
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>   
-                @endif
-                @if (session('estadoon'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    {{session('estadoon')}}
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>   
-                @endif
-                @if (session('estadooff'))
-                <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    {{session('estadooff')}}
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>   
-                @endif
-                @if (session('asignarturno'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    {{session('asignarturno')}}
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>   
-                @endif
+      
                 {{ $peliculas ?? ''->links()}}
                <style>
                    .w-5{
